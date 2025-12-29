@@ -1,0 +1,1236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shan Alvin — Graphic Designer</title>
+  <meta name="description" content="Poster Design • Editing • LinkedIn Profile Visuals — Shan Alvin" />
+  <meta name="theme-color" content="#0b0f19" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg0:#070914;
+      --bg1:#0b0f1f;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.09);
+      --stroke: rgba(255,255,255,.12);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --muted2: rgba(255,255,255,.52);
+      --shadow: 0 24px 80px rgba(0,0,0,.40);
+      --r: 26px;
+
+      --a1:#7c5cff;
+      --a2:#35e0c5;
+      --a3:#ff7aa2;
+
+      --max: 1180px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1000px 700px at 18% 12%, rgba(124,92,255,.22), transparent 55%),
+        radial-gradient(900px 650px at 82% 22%, rgba(53,224,197,.18), transparent 58%),
+        radial-gradient(800px 600px at 60% 90%, rgba(255,122,162,.10), transparent 60%),
+        linear-gradient(180deg, var(--bg1), var(--bg0) 70%);
+      overflow-x:hidden;
+    }
+
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max); margin:0 auto; padding:0 18px}
+
+    /* top progress */
+    .progress{
+      position:fixed; top:0; left:0;
+      height:3px; width:0%;
+      z-index:9999;
+      background: linear-gradient(90deg, var(--a1), var(--a2), var(--a3));
+    }
+
+    /* animated background blobs */
+    .blobs{
+      position:fixed;
+      inset:-30vh -30vw;
+      pointer-events:none;
+      z-index:-2;
+      filter: blur(40px);
+      opacity:.9;
+    }
+    .blob{
+      position:absolute;
+      width: 520px; height: 520px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(124,92,255,.60), transparent 60%);
+      animation: drift 16s ease-in-out infinite;
+      mix-blend-mode: screen;
+    }
+    .blob.b2{
+      width: 560px; height: 560px;
+      left: 60%;
+      top: 10%;
+      background: radial-gradient(circle at 30% 30%, rgba(53,224,197,.55), transparent 60%);
+      animation-duration: 18s;
+    }
+    .blob.b3{
+      width: 520px; height: 520px;
+      left: 30%;
+      top: 70%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,122,162,.40), transparent 62%);
+      animation-duration: 20s;
+    }
+    @keyframes drift{
+      0%,100%{ transform: translate3d(0,0,0) scale(1); }
+      50%{ transform: translate3d(60px,-40px,0) scale(1.06); }
+    }
+
+    /* mouse glow */
+    .glow{
+      position:fixed;
+      width: 520px; height: 520px;
+      border-radius: 50%;
+      pointer-events:none;
+      transform: translate(-50%,-50%);
+      background: radial-gradient(circle, rgba(124,92,255,.18), rgba(53,224,197,.12), transparent 58%);
+      filter: blur(12px);
+      opacity:.65;
+      z-index:-1;
+    }
+
+    /* header */
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      backdrop-filter: blur(14px);
+      background: rgba(7,9,20,.50);
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    .navwrap{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding: 14px 0;
+      gap: 12px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      min-width: 220px;
+    }
+    .logo{
+      width:46px; height:46px;
+      border-radius: 16px;
+      display:grid;
+      place-items:center;
+      font-weight: 900;
+      letter-spacing: .5px;
+      background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(53,224,197,.75));
+      box-shadow: 0 14px 44px rgba(124,92,255,.24);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+    .btxt{display:flex; flex-direction:column; line-height:1.05}
+    .btxt small{color: var(--muted); font-weight: 600}
+
+    nav{
+      display:flex;
+      align-items:center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    nav a{
+      color: var(--muted);
+      font-weight: 700;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: transform .16s ease, background .16s ease, border-color .16s ease;
+    }
+    nav a:hover{
+      color: var(--text);
+      background: rgba(255,255,255,.05);
+      border-color: rgba(255,255,255,.10);
+      transform: translateY(-1px);
+    }
+
+    .righttools{
+      display:flex; align-items:center; gap:10px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
+      padding: 11px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(135deg, rgba(124,92,255,.92), rgba(53,224,197,.62));
+      color: rgba(255,255,255,.95);
+      font-weight: 900;
+      box-shadow: 0 16px 46px rgba(0,0,0,.30);
+      cursor:pointer;
+      transition: transform .16s ease, filter .16s ease;
+      user-select:none;
+    }
+    .btn:hover{transform: translateY(-1px); filter: brightness(1.05)}
+    .btn.ghost{
+      background: rgba(255,255,255,.05);
+      box-shadow:none;
+      color: var(--text);
+    }
+    .iconbtn{
+      width:44px; height:44px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      display:grid;
+      place-items:center;
+      cursor:pointer;
+      transition: transform .16s ease, background .16s ease;
+    }
+    .iconbtn:hover{transform: translateY(-1px); background: rgba(255,255,255,.08)}
+    .burger{display:none}
+    .burger span{
+      display:block; width:18px; height:2px;
+      background: rgba(255,255,255,.9);
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+
+    /* hero */
+    .hero{
+      padding: 56px 0 18px;
+    }
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 18px;
+      align-items: start;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 999px;
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .dot{
+      width:8px; height:8px; border-radius:50%;
+      background: linear-gradient(135deg, var(--a1), var(--a2));
+      box-shadow: 0 0 18px rgba(53,224,197,.35);
+    }
+    h1{
+      margin: 14px 0 10px;
+      font-size: clamp(2.1rem, 3.8vw, 3.7rem);
+      line-height: 1.04;
+      letter-spacing: -0.03em;
+    }
+    .accent{
+      background: linear-gradient(90deg, var(--a1), var(--a2));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color: transparent;
+    }
+    .lead{
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.65;
+      max-width: 60ch;
+    }
+    .ctaRow{display:flex; gap:12px; margin: 18px 0 12px; flex-wrap:wrap}
+    .chips{display:flex; gap:10px; flex-wrap:wrap; margin: 12px 0 20px}
+    .chip{
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      font-weight: 800;
+      transition: transform .16s ease, background .16s ease;
+    }
+    .chip:hover{transform: translateY(-1px); background: rgba(255,255,255,.08); color: var(--text)}
+
+    .stats{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 12px;
+    }
+    .stat{
+      padding: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      transition: transform .18s ease;
+    }
+    .stat:hover{transform: translateY(-2px)}
+    .stat strong{display:block; font-size:1.05rem}
+    .stat span{color: var(--muted); font-weight: 700; font-size: .95rem}
+
+    /* right hero card */
+    .panel{
+      border-radius: var(--r);
+      border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position: sticky;
+      top: 92px;
+    }
+    .panelTop{
+      display:flex; gap:12px; align-items:center;
+      padding: 18px;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    .avatar{
+      width:52px; height:52px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.22);
+      display:grid;
+      place-items:center;
+      font-weight: 900;
+      letter-spacing:.5px;
+    }
+    .panelTop h3{margin:0}
+    .panelTop p{margin:2px 0 0; color: var(--muted); font-weight: 700}
+    .panelBody{padding: 18px}
+    .tagRow{display:flex; flex-wrap:wrap; gap:8px; margin-bottom: 14px}
+    .tag{
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      font-weight: 800;
+      font-size: .92rem;
+    }
+    .thumbs{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .thumb{
+      height: 88px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      background-size: cover;
+      background-position: center;
+      position:relative;
+      overflow:hidden;
+      transform: translateZ(0);
+    }
+    .thumb::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, transparent, rgba(0,0,0,.30));
+    }
+
+    /* online placeholders (safe) */
+    .t1{background-image:url("https://images.unsplash.com/photo-1526481280695-3c687fd643ed?auto=format&fit=crop&w=900&q=60")}
+    .t2{background-image:url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=60")}
+    .t3{background-image:url("https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=900&q=60")}
+    .t4{background-image:url("https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=900&q=60")}
+
+    .panelFoot{
+      display:flex; gap:10px; flex-wrap:wrap;
+      padding: 18px;
+      border-top: 1px solid rgba(255,255,255,.10);
+    }
+
+    /* section base */
+    section{position:relative}
+    .section{
+      padding: 64px 0;
+    }
+    .alt{
+      border-top: 1px solid rgba(255,255,255,.10);
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00));
+    }
+    .head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 16px;
+      flex-wrap:wrap;
+      margin-bottom: 18px;
+    }
+    .head h2{
+      margin:0;
+      font-size: 1.9rem;
+      letter-spacing:-.02em;
+    }
+    .head p{margin:0; color: var(--muted); font-weight: 700}
+
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 16px;
+    }
+    .card{
+      border-radius: var(--r);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      padding: 18px;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+    .card:hover{
+      transform: translateY(-3px);
+      border-color: rgba(53,224,197,.40);
+      background: rgba(255,255,255,.07);
+    }
+    .card h3{margin:0 0 8px}
+    .card p{margin:0; color: var(--muted); line-height:1.6; font-weight:700}
+    .list{margin: 12px 0 0; padding-left: 18px; color: var(--muted); font-weight: 700}
+    .list li{margin: 8px 0}
+
+    /* portfolio */
+    .filters{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin: 10px 0 16px;
+    }
+    .fbtn{
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      font-weight: 900;
+      cursor:pointer;
+      transition: transform .16s ease, background .16s ease, border-color .16s ease;
+    }
+    .fbtn:hover{transform: translateY(-1px); background: rgba(255,255,255,.08)}
+    .fbtn.active{color: var(--text); border-color: rgba(124,92,255,.55)}
+
+    .workGrid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 16px;
+    }
+    .work{
+      padding: 0;
+      overflow:hidden;
+    }
+    .wimg{
+      height: 178px;
+      background-size: cover;
+      background-position:center;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      transform: scale(1.02);
+      transition: transform .35s ease;
+    }
+    .work:hover .wimg{transform: scale(1.08)}
+    .wmeta{
+      padding: 16px 18px 18px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 12px;
+    }
+    .wmeta strong{display:block}
+    .wmeta small{display:block; margin-top:4px; color: var(--muted); font-weight: 800}
+
+    .wcta{
+      display:flex; gap:10px;
+    }
+    .miniBtn{
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      font-weight: 900;
+      cursor:pointer;
+      transition: transform .16s ease, background .16s ease;
+      white-space:nowrap;
+    }
+    .miniBtn:hover{transform: translateY(-1px); background: rgba(255,255,255,.08)}
+    .miniBtn.primary{
+      background: linear-gradient(135deg, rgba(124,92,255,.88), rgba(53,224,197,.55));
+      border-color: rgba(255,255,255,.14);
+    }
+
+    /* work backgrounds */
+    .w1{background-image:url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=70")}
+    .w2{background-image:url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=70")}
+    .w3{background-image:url("https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1400&q=70")}
+    .w4{background-image:url("https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1400&q=70")}
+    .w5{background-image:url("https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1400&q=70")}
+    .w6{background-image:url("https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=1400&q=70")}
+
+    /* callout */
+    .callout{
+      margin-top: 18px;
+      border-radius: var(--r);
+      border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(135deg, rgba(124,92,255,.14), rgba(53,224,197,.08));
+      padding: 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 16px;
+      flex-wrap:wrap;
+    }
+    .callout h3{margin:0 0 6px}
+    .callout p{margin:0; color: var(--muted); font-weight: 700}
+
+    /* pricing */
+    .priceCard{
+      position:relative;
+    }
+    .badge{
+      position:absolute;
+      top:14px; right:14px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.20);
+      font-weight: 900;
+      font-size: .85rem;
+    }
+    .amt{font-size:1.6rem; margin:.35rem 0 .15rem; font-weight: 950}
+    .featured{
+      background: linear-gradient(135deg, rgba(124,92,255,.18), rgba(53,224,197,.10));
+      border-color: rgba(124,92,255,.45);
+      box-shadow: 0 26px 90px rgba(0,0,0,.35);
+    }
+
+    /* faq */
+    details{
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      padding: 14px 16px;
+      margin: 10px 0;
+    }
+    summary{
+      cursor:pointer;
+      font-weight: 900;
+      list-style: none;
+    }
+    summary::-webkit-details-marker{display:none}
+    details p{color: var(--muted); font-weight: 700; line-height:1.6; margin: 10px 0 0}
+
+    /* contact */
+    .contact{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-items:start;
+    }
+    .contactBoxes{
+      display:grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .cbox{
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      padding: 14px 16px;
+      transition: transform .16s ease, background .16s ease, border-color .16s ease;
+    }
+    .cbox:hover{transform: translateY(-2px); background: rgba(255,255,255,.08); border-color: rgba(53,224,197,.40)}
+    .cbox strong{display:block}
+    .cbox small{display:block; color: var(--muted); font-weight: 800; margin-top: 4px}
+
+    form{
+      border-radius: var(--r);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      padding: 18px;
+    }
+    label{display:block; font-weight: 900; margin: 10px 0 12px}
+    input, select, textarea{
+      width:100%;
+      margin-top: 8px;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.22);
+      color: var(--text);
+      outline:none;
+      font-weight: 700;
+    }
+    input:focus, select:focus, textarea:focus{
+      border-color: rgba(124,92,255,.60);
+    }
+    .hint{color: var(--muted2); font-weight: 700; margin: 10px 0 0}
+
+    /* footer */
+    footer{
+      border-top: 1px solid rgba(255,255,255,.10);
+      padding: 22px 0;
+      background: rgba(0,0,0,.12);
+    }
+    .foot{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+      flex-wrap:wrap;
+      color: var(--muted);
+      font-weight: 800;
+    }
+    .foot a{color: var(--muted)}
+    .foot a:hover{color: var(--text)}
+
+    /* floating whatsapp */
+    .fab{
+      position:fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 56px; height: 56px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: linear-gradient(135deg, rgba(53,224,197,.86), rgba(124,92,255,.66));
+      box-shadow: 0 18px 60px rgba(0,0,0,.40);
+      display:grid;
+      place-items:center;
+      font-size: 22px;
+      z-index: 1200;
+      cursor:pointer;
+      transition: transform .16s ease, filter .16s ease;
+    }
+    .fab:hover{transform: translateY(-2px); filter: brightness(1.05)}
+
+    /* reveal animation */
+    .reveal{
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    .reveal.show{
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    /* responsive */
+    @media (max-width: 980px){
+      .heroGrid{grid-template-columns: 1fr; gap: 14px}
+      .panel{position:relative; top:auto}
+      .grid3{grid-template-columns: 1fr}
+      .workGrid{grid-template-columns: 1fr}
+      .stats{grid-template-columns: 1fr}
+      .contact{grid-template-columns: 1fr}
+      nav{display:none}
+      .burger{display:grid}
+      .mobileNav{
+        display:none;
+        padding: 10px 0 16px;
+        border-top: 1px solid rgba(255,255,255,.10);
+      }
+      .mobileNav.open{display:block}
+      .mobileNav a{
+        display:block;
+        padding: 12px 12px;
+        border-radius: 14px;
+        border: 1px solid rgba(255,255,255,.10);
+        background: rgba(255,255,255,.04);
+        margin: 10px 0 0;
+        color: var(--text);
+        font-weight: 900;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *{scroll-behavior:auto}
+      .blob{animation:none}
+      .reveal{opacity:1; transform:none}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="progress" id="progress"></div>
+
+  <div class="blobs" aria-hidden="true">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+  </div>
+  <div class="glow" id="glow" aria-hidden="true"></div>
+
+  <header>
+    <div class="container">
+      <div class="navwrap">
+        <a class="brand" href="#top">
+          <div class="logo">SA</div>
+          <div class="btxt">
+            <strong>Shan Alvin</strong>
+            <small>Graphic Designer</small>
+          </div>
+        </a>
+
+        <nav aria-label="Primary navigation">
+          <a href="#services">Services</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact" class="btn" style="padding:10px 12px;border-radius:12px;">Hire Me</a>
+        </nav>
+
+        <div class="righttools">
+          <a class="iconbtn" target="_blank" rel="noreferrer"
+             title="Instagram"
+             href="https://www.instagram.com/shanposters.in/">
+            IG
+          </a>
+          <a class="iconbtn" target="_blank" rel="noreferrer"
+             title="LinkedIn"
+             href="https://www.linkedin.com/in/shan-alvin-33369a34a/">
+            in
+          </a>
+
+          <button class="iconbtn burger" id="burger" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- mobile menu -->
+      <div class="mobileNav" id="mobileNav" aria-label="Mobile navigation">
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Hire Me</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container heroGrid">
+        <div class="reveal">
+          <div class="pill"><span class="dot"></span>Available for freelance • Fast delivery • Clean design</div>
+
+          <h1>
+            Posters that <span class="accent">grab attention</span>.<br/>
+            Edits that <span class="accent">feel premium</span>.
+          </h1>
+
+          <p class="lead">
+            I design modern posters, do high-quality editing, and help improve LinkedIn profiles
+            so you look professional and stand out.
+          </p>
+
+          <div class="ctaRow">
+            <a class="btn" href="#contact">Get a Quote</a>
+            <a class="btn ghost" href="#portfolio">View Portfolio</a>
+          </div>
+
+          <div class="chips">
+            <a class="chip" target="_blank" rel="noreferrer" href="https://www.instagram.com/shanposters.in/">Instagram ↗</a>
+            <a class="chip" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/shan-alvin-33369a34a/">LinkedIn ↗</a>
+            <a class="chip" href="#pricing">Packages</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>24–48h</strong>
+              <span>Typical delivery</span>
+            </div>
+            <div class="stat">
+              <strong>2–3</strong>
+              <span>Revisions included</span>
+            </div>
+            <div class="stat">
+              <strong>HD</strong>
+              <span>Export + source files</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="panel reveal" id="tiltPanel">
+          <div class="panelTop">
+            <div class="avatar">SA</div>
+            <div>
+              <h3 style="margin:0">Shan Alvin</h3>
+              <p>Poster • Editing • LinkedIn</p>
+            </div>
+          </div>
+
+          <div class="panelBody">
+            <div class="tagRow">
+              <span class="tag">Minimal</span>
+              <span class="tag">Bold</span>
+              <span class="tag">Modern</span>
+            </div>
+
+            <div class="thumbs">
+              <div class="thumb t1"></div>
+              <div class="thumb t2"></div>
+              <div class="thumb t3"></div>
+              <div class="thumb t4"></div>
+            </div>
+
+            <p style="margin:12px 0 0;color:var(--muted);font-weight:800;line-height:1.6">
+              Real work is available on Instagram. This site is designed to look premium and convert visitors into clients.
+            </p>
+          </div>
+
+          <div class="panelFoot">
+            <a class="btn" style="flex:1;justify-content:center" href="#contact">Start a Project</a>
+            <a class="btn ghost" style="flex:1;justify-content:center" target="_blank" rel="noreferrer"
+               href="https://www.instagram.com/shanposters.in/">Open IG ↗</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section alt">
+      <div class="container">
+        <div class="head reveal">
+          <h2>Services</h2>
+          <p>Choose a service or bundle them for a better deal.</p>
+        </div>
+
+        <div class="grid3">
+          <div class="card reveal tilt">
+            <h3>Poster Design</h3>
+            <p>Events, promotions, announcements, product launches, social media.</p>
+            <ul class="list">
+              <li>Modern layout + typography</li>
+              <li>Instagram/Facebook sizes</li>
+              <li>Print-ready exports</li>
+            </ul>
+          </div>
+
+          <div class="card reveal tilt">
+            <h3>Editing & Retouching</h3>
+            <p>Photo edits, background removal, cleanup, color correction.</p>
+            <ul class="list">
+              <li>Natural, premium look</li>
+              <li>HD exports</li>
+              <li>Fast turnaround</li>
+            </ul>
+          </div>
+
+          <div class="card reveal tilt">
+            <h3>LinkedIn Profile Visuals</h3>
+            <p>Custom banner design + profile polish guidance.</p>
+            <ul class="list">
+              <li>2 banner options</li>
+              <li>Headline/About suggestions</li>
+              <li>Optimization checklist</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout reveal">
+          <div>
+            <h3>Want a consistent brand style?</h3>
+            <p>I’ll match colors, fonts, and layout across posters and LinkedIn visuals.</p>
+          </div>
+          <a class="btn" href="#contact">Let’s Talk</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="section">
+      <div class="container">
+        <div class="head reveal">
+          <h2>Portfolio</h2>
+          <p>Modern placeholders now — your Instagram work links can be added anytime.</p>
+        </div>
+
+        <div class="filters reveal" aria-label="Portfolio filters">
+          <button class="fbtn active" data-filter="all">All</button>
+          <button class="fbtn" data-filter="poster">Posters</button>
+          <button class="fbtn" data-filter="edit">Editing</button>
+          <button class="fbtn" data-filter="linkedin">LinkedIn</button>
+        </div>
+
+        <div class="workGrid" id="workGrid">
+          <article class="card work reveal tilt" data-type="poster">
+            <div class="wimg w1"></div>
+            <div class="wmeta">
+              <div>
+                <strong>Event Poster</strong>
+                <small>Poster Design</small>
+              </div>
+              <div class="wcta">
+                <a class="miniBtn" target="_blank" rel="noreferrer" href="https://www.instagram.com/shanposters.in/">Instagram ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card work reveal tilt" data-type="poster">
+            <div class="wimg w2"></div>
+            <div class="wmeta">
+              <div>
+                <strong>Product Promo</strong>
+                <small>Poster Design</small>
+              </div>
+              <div class="wcta">
+                <a class="miniBtn" target="_blank" rel="noreferrer" href="https://www.instagram.com/shanposters.in/">Instagram ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card work reveal tilt" data-type="edit">
+            <div class="wimg w3"></div>
+            <div class="wmeta">
+              <div>
+                <strong>Photo Enhancement</strong>
+                <small>Editing</small>
+              </div>
+              <div class="wcta">
+                <a class="miniBtn" target="_blank" rel="noreferrer" href="https://www.instagram.com/shanposters.in/">Instagram ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card work reveal tilt" data-type="edit">
+            <div class="wimg w4"></div>
+            <div class="wmeta">
+              <div>
+                <strong>Background Removal</strong>
+                <small>Editing</small>
+              </div>
+              <div class="wcta">
+                <a class="miniBtn" target="_blank" rel="noreferrer" href="https://www.instagram.com/shanposters.in/">Instagram ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card work reveal tilt" data-type="linkedin">
+            <div class="wimg w5"></div>
+            <div class="wmeta">
+              <div>
+                <strong>LinkedIn Banner</strong>
+                <small>LinkedIn</small>
+              </div>
+              <div class="wcta">
+                <a class="miniBtn" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/shan-alvin-33369a34a/">LinkedIn ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card work reveal tilt" data-type="linkedin">
+            <div class="wimg w6"></div>
+            <div class="wmeta">
+              <div>
+                <strong>Profile Makeover</strong>
+                <small>LinkedIn</small>
+              </div>
+              <div class="wcta">
+                <a class="miniBtn" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/shan-alvin-33369a34a/">LinkedIn ↗</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="callout reveal">
+          <div>
+            <h3>Want your real Instagram posts here?</h3>
+            <p>Send me 6–12 Instagram post links, I’ll plug them into the portfolio cards instantly.</p>
+          </div>
+          <a class="btn ghost" target="_blank" rel="noreferrer" href="https://www.instagram.com/shanposters.in/">Open Instagram ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="section alt">
+      <div class="container">
+        <div class="head reveal">
+          <h2>Pricing</h2>
+          <p>Transparent packages. Final cost depends on complexity and delivery time.</p>
+        </div>
+
+        <div class="grid3">
+          <div class="card priceCard reveal tilt">
+            <h3>Starter</h3>
+            <div class="amt">£25–£40</div>
+            <p>Single poster / basic edits.</p>
+            <ul class="list">
+              <li>1 concept</li>
+              <li>2 revisions</li>
+              <li>HD export</li>
+            </ul>
+            <div style="margin-top:14px">
+              <a class="btn ghost" href="#contact">Choose Starter</a>
+            </div>
+          </div>
+
+          <div class="card priceCard featured reveal tilt">
+            <div class="badge">Most Popular</div>
+            <h3>Pro</h3>
+            <div class="amt">£45–£80</div>
+            <p>Poster + multiple sizes / advanced edits.</p>
+            <ul class="list">
+              <li>2 concepts</li>
+              <li>3 revisions</li>
+              <li>Social sizes included</li>
+            </ul>
+            <div style="margin-top:14px">
+              <a class="btn" href="#contact">Choose Pro</a>
+            </div>
+          </div>
+
+          <div class="card priceCard reveal tilt">
+            <h3>LinkedIn Boost</h3>
+            <div class="amt">£35–£70</div>
+            <p>Banner + profile guidance.</p>
+            <ul class="list">
+              <li>2 banner options</li>
+              <li>Headline/About suggestions</li>
+              <li>Optimization checklist</li>
+            </ul>
+            <div style="margin-top:14px">
+              <a class="btn ghost" href="#contact">Choose Boost</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="head reveal">
+          <h2>FAQ</h2>
+          <p>Quick answers before you message.</p>
+        </div>
+
+        <details class="reveal">
+          <summary>What do you need from me to start?</summary>
+          <p>Send the text/content, size (A4/Instagram/etc.), any style reference, and your deadline.</p>
+        </details>
+
+        <details class="reveal">
+          <summary>Do you provide source files?</summary>
+          <p>Yes, if requested. You’ll always receive HD exports (PNG/JPG/PDF).</p>
+        </details>
+
+        <details class="reveal">
+          <summary>How fast is delivery?</summary>
+          <p>Most designs can be delivered within 24–48 hours depending on revisions and complexity.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section alt">
+      <div class="container">
+        <div class="head reveal">
+          <h2>Contact</h2>
+          <p>Tell me what you need — I’ll reply with a quote.</p>
+        </div>
+
+        <div class="contact">
+          <div class="reveal">
+            <h3 style="margin:0 0 8px">Let’s build something beautiful</h3>
+            <p style="margin:0;color:var(--muted);font-weight:800;line-height:1.6">
+              You can contact via Instagram/LinkedIn, or send a request using the form (opens your email app).
+            </p>
+
+            <div class="contactBoxes">
+              <a class="cbox tilt" target="_blank" rel="noreferrer" href="https://www.instagram.com/shanposters.in/">
+                <strong>Instagram</strong>
+                <small>@shanposters.in ↗</small>
+              </a>
+              <a class="cbox tilt" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/shan-alvin-33369a34a/">
+                <strong>LinkedIn</strong>
+                <small>Open profile ↗</small>
+              </a>
+
+              <!-- CHANGE THIS WhatsApp number -->
+              <a class="cbox tilt" target="_blank" rel="noreferrer"
+                 href="https://wa.me/000000000000?text=Hi%20Shan%2C%20I%27m%20interested%20in%20your%20design%20services.">
+                <strong>WhatsApp</strong>
+                <small>Message directly ↗</small>
+              </a>
+
+              <!-- CHANGE THIS email -->
+              <a class="cbox tilt" href="mailto:shan@example.com?subject=Design%20Project%20Request">
+                <strong>Email</strong>
+                <small>shan@example.com</small>
+              </a>
+            </div>
+          </div>
+
+          <form class="reveal" id="quoteForm">
+            <label>
+              Name
+              <input name="name" placeholder="Your name" required />
+            </label>
+
+            <label>
+              Email
+              <input type="email" name="email" placeholder="you@email.com" required />
+            </label>
+
+            <label>
+              Service
+              <select name="service" required>
+                <option value="" disabled selected>Select a service</option>
+                <option>Poster Design</option>
+                <option>Editing & Retouching</option>
+                <option>LinkedIn Profile Visuals</option>
+                <option>Bundle (Multiple)</option>
+              </select>
+            </label>
+
+            <label>
+              Project details
+              <textarea name="details" rows="5" placeholder="Size, deadline, style reference, content..." required></textarea>
+            </label>
+
+            <button class="btn" type="submit">Send Request</button>
+            <p class="hint">No backend required — this opens your email app with a pre-filled message.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <div>© <span id="year"></span> Shan Alvin</div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a target="_blank" rel="noreferrer" href="https://www.instagram.com/shanposters.in/">Instagram ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp (CHANGE number) -->
+  <a class="fab" target="_blank" rel="noreferrer"
+     href="https://wa.me/000000000000?text=Hi%20Shan%2C%20I%27m%20interested%20in%20your%20design%20services."
+     aria-label="Chat on WhatsApp">💬</a>
+
+  <script>
+    // Progress bar
+    const progress = document.getElementById("progress");
+    window.addEventListener("scroll", () => {
+      const h = document.documentElement;
+      const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+      progress.style.width = pct + "%";
+    });
+
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mouse glow
+    const glow = document.getElementById("glow");
+    let gx = innerWidth * 0.5, gy = innerHeight * 0.3;
+    let tx = gx, ty = gy;
+    window.addEventListener("mousemove", (e) => { tx = e.clientX; ty = e.clientY; });
+    function animateGlow(){
+      gx += (tx - gx) * 0.08;
+      gy += (ty - gy) * 0.08;
+      glow.style.left = gx + "px";
+      glow.style.top  = gy + "px";
+      requestAnimationFrame(animateGlow);
+    }
+    animateGlow();
+
+    // Mobile menu
+    const burger = document.getElementById("burger");
+    const mobileNav = document.getElementById("mobileNav");
+    burger?.addEventListener("click", () => {
+      const open = mobileNav.classList.toggle("open");
+      burger.setAttribute("aria-expanded", String(open));
+    });
+    mobileNav?.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+      mobileNav.classList.remove("open");
+      burger.setAttribute("aria-expanded", "false");
+    }));
+
+    // Reveal on scroll
+    const revealEls = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (en.isIntersecting) en.target.classList.add("show");
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+
+    // Tilt effect (lightweight)
+    function enableTilt(selector){
+      document.querySelectorAll(selector).forEach(card => {
+        card.addEventListener("mousemove", (e) => {
+          const r = card.getBoundingClientRect();
+          const x = e.clientX - r.left;
+          const y = e.clientY - r.top;
+          const rx = ((y / r.height) - 0.5) * -10;
+          const ry = ((x / r.width) - 0.5) * 10;
+          card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-2px)`;
+        });
+        card.addEventListener("mouseleave", () => {
+          card.style.transform = "";
+        });
+      });
+    }
+    enableTilt(".tilt");
+
+    // Portfolio filter
+    const buttons = document.querySelectorAll(".fbtn");
+    const works = document.querySelectorAll(".work");
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        const f = btn.dataset.filter;
+        works.forEach(w => {
+          const t = w.dataset.type;
+          w.style.display = (f === "all" || f === t) ? "block" : "none";
+        });
+      });
+    });
+
+    // Contact form -> mailto
+    const form = document.getElementById("quoteForm");
+    form?.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const name = data.get("name");
+      const email = data.get("email");
+      const service = data.get("service");
+      const details = data.get("details");
+
+      // CHANGE THIS EMAIL:
+      const to = "shan@example.com";
+
+      const subject = encodeURIComponent(`Design Request — ${service}`);
+      const body = encodeURIComponent(
+`Hi Shan,
+
+My name: ${name}
+My email: ${email}
+Service: ${service}
+
+Project details:
+${details}
+
+Thanks!`
+      );
+
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html>
